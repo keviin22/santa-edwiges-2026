@@ -331,6 +331,13 @@
     color:var(--gold);
   }
 
+  .day-card a{
+    text-decoration:none;
+    color:var(--ink);
+  }
+
+  .day-card a:hover{color:var(--gold);}
+
   /* ---------- HISTÓRIA ---------- */
   .historia{
     background:var(--brown);
