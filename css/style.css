@@ -177,6 +177,75 @@
     color:var(--gold);
   }
 
+  /* ---------- COMISSÕES ---------- */
+  .comissoes{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    max-width:480px;
+    margin:0 auto;
+    padding:26px 20px 40px;
+  }
+  .card-comissoes{
+    min-height:280px;
+    cursor:pointer;
+    perspective:1200px;
+    outline:none;
+  }
+  .card-comissoes:focus-visible{
+    border-radius:16px;
+    outline:3px solid var(--gold);
+    outline-offset:4px;
+  }
+  .card-inner{
+    position:relative;
+    width:100%;
+    min-height:280px;
+    transform-style:preserve-3d;
+    transition:transform .6s ease;
+  }
+  .card-comissoes.is-flipped .card-inner{transform:rotateY(180deg);}
+  .card-face,
+  .card-back{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:28px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+  }
+  .card-face{
+    background:var(--cream-light);
+    text-align:center;
+  }
+  .card-face h1,
+  .card-back h2{
+    font-size:1.55rem;
+    color:var(--brown-deep);
+  }
+  .card-face p,
+  .card-back p{margin:0 0 16px;}
+  .card-back{
+    background:var(--brown);
+    color:var(--cream-light);
+    transform:rotateY(180deg);
+  }
+  .card-back h2{color:var(--cream-light);}
+  .flip-hint{
+    display:block;
+    margin-top:auto;
+    color:var(--red);
+    font-family:'Playfair Display', serif;
+    font-size:.9rem;
+    font-weight:700;
+  }
+  .card-back .flip-hint{color:var(--gold);}
+
   /* ---------- BACKLINK (subpages) ---------- */
   .backlink-wrap{
     max-width:760px;
@@ -559,6 +628,7 @@
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .btn{transition:none;}
+    .card-inner{transition:none;}
   }
 
   @media (max-width: 639px) {
