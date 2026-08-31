@@ -187,7 +187,6 @@
     padding:26px 20px 40px;
   }
   .card-comissoes{
-    min-height:280px;
     cursor:pointer;
     perspective:1200px;
     outline:none;
@@ -200,9 +199,8 @@
   .card-inner{
     position:relative;
     width:100%;
-    min-height:280px;
     transform-style:preserve-3d;
-    transition:transform .6s ease;
+    transition:transform .6s ease, height .6s ease;
   }
   .card-comissoes.is-flipped .card-inner{transform:rotateY(180deg);}
   .card-face,
@@ -220,6 +218,7 @@
     -webkit-backface-visibility:hidden;
   }
   .card-face{
+    position:relative;
     background:var(--cream-light);
     text-align:center;
   }
