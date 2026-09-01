@@ -379,6 +379,71 @@
     margin: 0 0 20px 0;
     color:var(--red);
   }
+  /* A página de noiteiros mantém um cartão por data, ao lado do marcador. */
+  #noiteiros .timeline{
+    display:grid;
+    grid-template-columns:47px minmax(0, 1fr);
+    column-gap:13px;
+    width:min(100%, 340px);
+    margin:0 auto 26px;
+  }
+  #noiteiros .timeline:last-child{margin-bottom:0;}
+  #noiteiros .timeline::before{
+    bottom:-32px;
+    background:var(--gold);
+  }
+  #noiteiros .timeline:last-child::before{
+    display:none;
+  }
+  #noiteiros .day{
+    grid-column:1;
+    grid-row:1;
+    padding-left:0;
+    margin:0;
+    min-height:47px;
+    align-self:start;
+    z-index:1;
+  }
+  #noiteiros .day-card{
+    grid-column:2;
+    grid-row:1;
+    display:grid;
+    gap:10px;
+    width:100%;
+    max-width:none;
+    justify-self:stretch;
+  }
+  #noiteiros .day-card h5{
+    margin:0;
+    text-align: center;
+  }
+  /* O cabeçalho ocupa a mesma área horizontal dos cartões. */
+  #noiteiros .section-head{margin-left:60px;}
+  #noiteiros .section-head h2{margin-left:0;}
+  #noiteiros .section-head .rule{margin:14px auto 0;}
+  #programacao .section-head{margin-left:60px;}
+  #programacao .section-head h2{margin-left:0;}
+  #programacao .section-head .rule{margin:14px auto 0;}
+  /* Celulares compactos: evita que a data reduza demais a área do cartão. */
+  @media (max-width:359px){
+    #noiteiros .timeline{
+      grid-template-columns:42px minmax(0, 1fr);
+      column-gap:10px;
+      margin-bottom:20px;
+    }
+    #noiteiros .timeline::before{
+      left:20px;
+      bottom:-26px;
+    }
+    #noiteiros .section-head{margin-left:52px;}
+    #noiteiros .day-badge{
+      width:42px;
+      height:42px;
+    }
+    #noiteiros .day{min-height:42px;}
+    #noiteiros .day-badge .num{font-size:1rem;}
+    #noiteiros .day-card{padding:14px;}
+  }
   .day.feast .day-card{border-color:var(--red);}
   .day.feast h3{color:var(--red-deep);}
   .day-card ul{
@@ -615,6 +680,7 @@
       position:sticky;
       top:24px;
     }
+    #programacao .section-head{margin-left:336px;}
     .timeline{flex:1 1 auto;min-width:0;}
     .historia-grid{
       flex-direction:row;
