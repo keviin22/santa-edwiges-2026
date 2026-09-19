@@ -481,6 +481,9 @@
     color:var(--ink);
   }
 
+  .celebrantes{min-width:0;}
+  .celebrante-adicional{display:block;}
+
   .day-card a:hover{color:var(--gold);}
 
   /* ---------- HISTÓRIA ---------- */
