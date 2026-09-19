@@ -1,49 +1,41 @@
-const cardsComissao = document.querySelectorAll('.card-comissoes');
+document.querySelectorAll('.card-comissoes').forEach((card, index) => {
+  const face = card.querySelector('.card-face');
+  const back = card.querySelector('.card-back');
+  if (!face || !back) return;
 
-cardsComissao.forEach((cardComissao) => {
-  const cardInner = cardComissao.querySelector('.card-inner');
-  const cardFace = cardComissao.querySelector('.card-face');
-  const cardBack = cardComissao.querySelector('.card-back');
-  const nomeComissao = cardComissao.querySelector('.title-card-back')?.textContent.trim()
-    || cardComissao.querySelector('.card-face h3')?.textContent.trim()
-    || 'comissão';
+  const name = face.querySelector('h2')?.textContent.trim() || 'comissão';
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'card-toggle';
+  back.id = `comissao-detalhes-${index + 1}`;
+  toggle.setAttribute('aria-controls', back.id);
 
-  function ajustarAltura(face) {
-    // O verso é absoluto e tem `inset: 0`, então medimos uma cópia sem
-    // essas restrições para obter a altura natural de todo o conteúdo.
-    const copia = face.cloneNode(true);
-    copia.style.position = 'absolute';
-    copia.style.inset = 'auto';
-    copia.style.width = '100%';
-    copia.style.height = 'auto';
-    copia.style.transform = 'none';
-    copia.style.visibility = 'hidden';
-    copia.style.pointerEvents = 'none';
-    cardInner.appendChild(copia);
-    const altura = copia.offsetHeight;
-    copia.remove();
-
-    cardInner.style.height = `${altura}px`;
+  function setExpanded(expanded) {
+    card.classList.toggle('is-flipped', expanded);
+    face.inert = expanded;
+    back.inert = !expanded;
+    face.setAttribute('aria-hidden', String(expanded));
+    back.setAttribute('aria-hidden', String(!expanded));
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? 'Voltar ao resumo' : 'Exibir detalhes';
+    toggle.setAttribute('aria-label', `${toggle.textContent}: ${name}`);
   }
 
-  function alternarCard() {
-    const estaVirado = cardComissao.classList.toggle('is-flipped');
-    ajustarAltura(estaVirado ? cardBack : cardFace);
-    cardComissao.setAttribute('aria-pressed', String(estaVirado));
-    cardComissao.setAttribute(
-      'aria-label',
-      estaVirado
-        ? `Voltar ao resumo da ${nomeComissao}`
-        : `Exibir detalhes da ${nomeComissao}`
-    );
-  }
+  // O botão fica fora das faces para manter o foco ao virar o cartão.
+  card.appendChild(toggle);
+  card.querySelectorAll('.flip-hint').forEach((hint) => hint.remove());
+  card.classList.add('is-enhanced');
+  setExpanded(false);
 
-  cardComissao.setAttribute('aria-label', `Exibir detalhes da ${nomeComissao}`);
-  cardComissao.addEventListener('click', alternarCard);
-  cardComissao.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
+  toggle.addEventListener('click', () => {
+    setExpanded(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  card.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && card.classList.contains('is-flipped')) {
       event.preventDefault();
-      alternarCard();
+      toggle.focus();
+      setExpanded(false);
     }
   });
 });

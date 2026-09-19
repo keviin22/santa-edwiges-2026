@@ -15,18 +15,21 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/icone-48.png">
   </head>
-  <body>
+  <body class="site-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <!-- HERO -->
     <header class="hero">
-      <img src="assets/images/banner.png" alt="Festa de Santa Edwiges 2026 — Paróquia Santa Edwiges, Uberaba">
+      <img src="assets/images/banner-otimizado.jpg" srcset="assets/images/banner-mobile.jpg 768w, assets/images/banner-otimizado.jpg 1307w" sizes="100vw" width="1307" height="517" fetchpriority="high" alt="Festa de Santa Edwiges 2026 — Paróquia Santa Edwiges, Uberaba">
       <div class="hero-sub">
         <p class="dates">7 a 18 de Outubro</p>
         <p class="tag">Santa Edwiges, rogai por nós, intercedei a Deus em nosso favor</p>
       </div>
     </header>
     <!-- LINKTREE -->
+    <main id="conteudo" tabindex="-1">
+    <h1 class="sr-only">Festa de Santa Edwiges 2026</h1>
     <nav class="linktree" aria-label="Links principais">
       <a class="link-card" href="programacao.html">
         <span class="link-card-icon">
@@ -119,7 +122,7 @@
       -->
       <a class="link-card" href="homenageados.html">
         <span class="link-card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg"width="64"height="64"viewBox="0 0 128 128"fill="none"stroke="currentColor"stroke-width="3"stroke-linecap="round"stroke-linejoin="round" role="img"aria-label="Flores em homenagem"><path d="M64 111V57M64 100Q51 78 31 64M64 100Q80 77 97 58"/><path d="M61 89Q40 90 38 73Q56 72 61 89Z"/><path d="M68 82Q88 85 94 68Q76 64 68 82Z"/><path d="M64 24C53 9 39 23 47 34 C30 34 32 53 48 52 C43 68 61 73 67 58 C80 70 94 56 81 45 C96 36 86 20 74 28 C77 13 61 10 64 24Z"/><circle cx="63" cy="42" r="7"/><!-- Flor esquerda --><path d="M28 42C20 34 11 44 18 51 C7 57 14 70 24 65 C25 78 40 77 41 65 C52 68 56 54 46 50 C49 38 34 33 28 42Z"/><circle cx="31" cy="56" r="5"/><!-- Flor direita --><path d="M93 32C85 23 75 33 81 41 C69 44 74 58 85 55 C83 68 98 70 101 58 C112 64 120 51 110 44 C117 33 103 24 96 34Z"/><circle cx="95" cy="46" r="5"/><!-- Laço --><path d="M61 101C44 84 41 108 60 104"/><path d="M67 101C84 84 87 108 68 104"/><circle cx="64" cy="103" r="3"/><path d="M62 106L55 116M66 106L73 116"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 128 128" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Flores em homenagem"><path d="M64 111V57M64 100Q51 78 31 64M64 100Q80 77 97 58"/><path d="M61 89Q40 90 38 73Q56 72 61 89Z"/><path d="M68 82Q88 85 94 68Q76 64 68 82Z"/><path d="M64 24C53 9 39 23 47 34 C30 34 32 53 48 52 C43 68 61 73 67 58 C80 70 94 56 81 45 C96 36 86 20 74 28 C77 13 61 10 64 24Z"/><circle cx="63" cy="42" r="7"/><!-- Flor esquerda --><path d="M28 42C20 34 11 44 18 51 C7 57 14 70 24 65 C25 78 40 77 41 65 C52 68 56 54 46 50 C49 38 34 33 28 42Z"/><circle cx="31" cy="56" r="5"/><!-- Flor direita --><path d="M93 32C85 23 75 33 81 41 C69 44 74 58 85 55 C83 68 98 70 101 58 C112 64 120 51 110 44 C117 33 103 24 96 34Z"/><circle cx="95" cy="46" r="5"/><!-- Laço --><path d="M61 101C44 84 41 108 60 104"/><path d="M67 101C84 84 87 108 68 104"/><circle cx="64" cy="103" r="3"/><path d="M62 106L55 116M66 106L73 116"/></svg>
         </span>
         <span class="link-card-text">
           <strong>Homenageados</strong>
@@ -152,13 +155,14 @@
         </a>
       -->
     </nav>
+    </main>
     <a href="#" id="btnTopo" title="Voltar ao topo" aria-label="Voltar ao topo">Voltar ao topo</a>
     <!-- FOOTER -->
     <footer id="contato">
       <div class="container">
         <p class="foot-title">Informações úteis e contato</p>
         <div class="foot-card">
-          <img src="./assets/images/favicon.png" alt="icone paróquia santa edwiges">
+          <img src="assets/images/brasao-otimizado.png" width="160" height="200" loading="lazy" decoding="async" alt="icone paróquia santa edwiges">
           <h3>Paróquia Santa Edwiges</h3>
           <p class="arqui">Arquidiocese de Uberaba</p>
           <ul class="foot-list">
