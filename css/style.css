@@ -154,6 +154,7 @@
   }
   .link-card-icon svg{width:22px;height:22px;}
   .link-card[href="homenageados.html"] .link-card-icon svg{width:32px;height:32px;}
+  .link-card[href="noiteiros.html"] .link-card-icon svg{width:32px;height:32px;}
   .link-card-text{
     flex:1 1 auto;
     min-width:0;
@@ -456,6 +457,14 @@
   #noiteiros .day-card .noiteiro{
     margin:0;
     text-align: center;
+  }
+  #noiteiros .day-card .donation-only{
+    display:block;
+    margin-top:3px;
+    color:var(--brown);
+    font-size:.82rem;
+    font-style:italic;
+    font-weight:500;
   }
   /* O cabeçalho ocupa a mesma área horizontal dos cartões. */
   #noiteiros .section-head{margin-left:60px;}
