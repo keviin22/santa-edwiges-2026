@@ -155,6 +155,7 @@
   .link-card-icon svg{width:22px;height:22px;}
   .link-card[href="homenageados.html"] .link-card-icon svg{width:32px;height:32px;}
   .link-card[href="noiteiros.html"] .link-card-icon svg{width:32px;height:32px;}
+  .link-card[href="madrinhas-padrinhos.html"] .link-card-icon svg{width:32px;height:32px;}
   .link-card-text{
     flex:1 1 auto;
     min-width:0;
@@ -342,6 +343,14 @@
     padding:16px 18px;
     box-shadow:var(--shadow);
   }
+  .padrinhos-intro{
+    max-width:560px;
+    margin:14px auto 0;
+    color:var(--brown-deep);
+  }
+  .padrinhos-card{margin-bottom:40px;}
+  .padrinhos-card .noiteiro{text-align:center;}
+  .padrinhos-card .noiteiro:last-child{margin-bottom:0;}
   .day-card h2,
   .day-card h3{
     font-size:1.05rem;
