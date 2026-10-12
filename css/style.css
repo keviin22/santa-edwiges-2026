@@ -267,6 +267,94 @@
   }
 
   /* ---------- TIMELINE / PROGRAMAÇÃO ---------- */
+  #programacao .today-panel[hidden],
+  #programacao .today-panel-link[hidden]{display:none;}
+  #programacao .today-panel{
+    display:grid;
+    grid-template-columns:74px minmax(0,1fr);
+    align-items:center;
+    gap:16px 22px;
+    margin:0 0 34px;
+    padding:22px;
+    border:2px solid var(--gold);
+    border-radius:18px;
+    background:radial-gradient(circle at 100% 0%, rgba(240,207,142,.19), transparent 42%), var(--red-deep);
+    color:var(--cream-light);
+    box-shadow:0 12px 30px rgba(74,46,8,.2);
+  }
+  #programacao .today-panel-date{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:74px;
+    height:74px;
+    border-radius:50%;
+    border:2px solid var(--gold-light);
+    color:var(--gold-light);
+    font-family:'Playfair Display',serif;
+    line-height:1;
+  }
+  #programacao .today-panel-number{font-size:2rem;font-weight:800;}
+  #programacao .today-panel-month{font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;}
+  #programacao .today-panel-kicker{
+    margin:0 0 3px;
+    color:var(--gold-light);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+  }
+  #programacao .today-panel h2{
+    margin:0;
+    color:var(--cream-light);
+    font-size:clamp(1.2rem,3vw,1.65rem);
+  }
+  #programacao .today-panel-message{margin:5px 0 0;font-size:.9rem;line-height:1.5;}
+  #programacao .today-panel-link{
+    grid-column:2;
+    justify-self:start;
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+    padding:9px 17px;
+    border-radius:999px;
+    background:var(--cream-light);
+    color:var(--red-deep);
+    font-size:.85rem;
+    font-weight:600;
+    text-decoration:none;
+  }
+  #programacao .today-panel-link:hover{background:var(--gold-light);}
+  #programacao .today-panel-link::after{content:'↓';margin-left:9px;font-size:1.1rem;}
+  #programacao .day.is-today .day-card{
+    border:2px solid var(--red);
+    box-shadow:0 8px 26px rgba(122,31,43,.23);
+  }
+  #programacao .day.is-today .day-badge{
+    background:var(--red);
+    border-color:var(--red-deep);
+    color:var(--cream-light);
+  }
+  #programacao .day-today-label{
+    display:inline-block;
+    margin:0 0 8px;
+    padding:3px 9px;
+    border-radius:999px;
+    background:var(--red);
+    color:var(--cream-light);
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  #programacao .day{scroll-margin-top:20px;}
+  @media (max-width:420px){
+    #programacao .today-panel{grid-template-columns:58px minmax(0,1fr);gap:12px;padding:16px;}
+    #programacao .today-panel-date{width:58px;height:58px;}
+    #programacao .today-panel-number{font-size:1.55rem;}
+    #programacao .today-panel-link{grid-column:1 / -1;}
+  }
   .programacao-grid{
     display:flex;
     flex-direction:column;

@@ -49,6 +49,19 @@
         <div class="rule"></div>
       </div>
 
+      <aside class="today-panel" id="today-panel" aria-labelledby="today-panel-title" hidden>
+        <div class="today-panel-date" aria-hidden="true">
+          <span class="today-panel-number" id="today-number"></span>
+          <span class="today-panel-month" id="today-month"></span>
+        </div>
+        <div class="today-panel-content">
+          <p class="today-panel-kicker">Programação de hoje</p>
+          <h2 id="today-panel-title"><time id="today-full-date"></time></h2>
+          <p class="today-panel-message" id="today-message"></p>
+        </div>
+        <a class="today-panel-link" id="today-link" href="#programacao-hoje" hidden>Ver programação de hoje</a>
+      </aside>
+
       <div class="programacao-grid">
         <figure class="programacao-figure">
           <img src="assets/images/Santa-edwiges-imagem.jpg"
@@ -58,7 +71,7 @@
 
         <div class="timeline">
 
-          <div class="day">
+          <div class="day" data-date="2026-10-07">
             <div class="day-badge"><span class="num">7</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>Abertura da Festa - 1° Dia da Novena</h2>
@@ -92,7 +105,7 @@
             </div>
           </div>
 
-          <div class="day">
+          <div class="day" data-date="2026-10-08">
             <div class="day-badge"><span class="num">8</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>2° Dia da Novena</h2>
@@ -121,7 +134,7 @@
             </div>
           </div>
 
-          <div class="day">
+          <div class="day" data-date="2026-10-09">
             <div class="day-badge"><span class="num">9</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>3° Dia da Novena</h2>
@@ -157,7 +170,7 @@
             </div>
           </div>
 
-          <div class="day">
+          <div class="day" data-date="2026-10-10">
             <div class="day-badge"><span class="num">10</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>4° Dia da Novena</h2>
@@ -193,7 +206,7 @@
             </div>
           </div>
 
-          <div class="day">
+          <div class="day" data-date="2026-10-11">
             <div class="day-badge"><span class="num">11</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>5° Dia da Novena</h2>
@@ -229,7 +242,7 @@
             </div>
           </div>
 
-          <div class="day">
+          <div class="day" data-date="2026-10-12">
             <div class="day-badge"><span class="num">12</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>6° Dia da Novena</h2>
@@ -265,7 +278,7 @@
             </div>
           </div>
 
-          <div class="day">
+          <div class="day" data-date="2026-10-13">
             <div class="day-badge"><span class="num">13</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>7° Dia da Novena</h2>
@@ -295,7 +308,7 @@
             </div>
           </div>
 
-          <div class="day">
+          <div class="day" data-date="2026-10-14">
             <div class="day-badge"><span class="num">14</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>8° Dia da Novena</h2>
@@ -325,7 +338,7 @@
             </div>
           </div>
 
-          <div class="day">
+          <div class="day" data-date="2026-10-15">
             <div class="day-badge"><span class="num">15</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>9° Dia da Novena</h2>
@@ -363,7 +376,7 @@
             </div>
           </div>
 
-          <div class="day feast">
+          <div class="day feast" data-date="2026-10-16">
             <div class="day-badge"><span class="num">16</span><span class="mon">Out</span></div>
             <div class="day-card">
               <h2>Dia de Santa Edwiges — Encerramento</h2>
@@ -419,9 +432,10 @@
             </div>
           </div>
 
-          <div class="day">
+          <div class="day" data-date="2026-10-18">
             <div class="day-badge"><span class="num">18</span><span class="mon">Out</span></div>
             <div class="day-card">
+              <h2>Missas e quermesse</h2>
               <ul>
                 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -511,6 +525,7 @@
       <p class="copy">Festa de Santa Edwiges 2026 — Paróquia Santa Edwiges, Uberaba • MG</p>
     </div>
   </footer>
+  <script src="scripts/programacao.js" defer></script>
 </body>
 
 </html>
